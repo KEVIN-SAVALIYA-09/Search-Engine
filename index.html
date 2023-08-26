@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Savaliya</title>
+</head>
+<body>
+    <h1>Search Engine</h1>
+    <form name="searchform" onsubmit="return searchf()" method="post">
+        <input type="search" id="searchvalue" />
+        <input type="submit" />
+    </form>
+    <div id="result"></div>
+    <script>
+        var data=[
+            "1::Grras::Jaipur:952::99%",
+            "2::Solution::Pune::745::70%",
+            "3::Mahindra::Chennai::660::60%",
+            "4::Tata Motors::Hyderabad::580::50%",
+            "5::Honda::Bangalore::550::50%",
+            "6::Volkswagen::Delhi::540::50%",
+            "7::Ford::Kolkata::530::50%",
+            "8::Maruti Suzuki::Ahmedabad::520::55%",
+            "9::Toyota::Chandigarh::510::55%",
+            "10::Audi::Lucknow::500::55%",
+            "11::BMW::Surat::490::55%",
+            "12::Nissan::Patna::480::55%",
+            "13::Suzuki::Coimbatore::470::55%",
+            "14::Jaguar::Ranchi::460::55%",
+            "15::Mercedes Benz::Bengaluru::450::70%",
+            "16::Land Rover::Mumbai::440::70%",
+            "17::Tesla::New York City::430::70%",
+            "18::Chevrolet::Goa::420::70%",
+            "19::Acura::Madrid::410::70%",
+            "20::Porsche::Barcelona::400::70%",
+            "21::Lexus::Paris::390::70%",
+            "22::Subaru::Shanghai::380::70%",
+            "23::Infiniti::Mexico City::370::70%",
+            "24::Dodge Challenger::Phoenix::360::79%",
+            "25::Mitsubishi::Tokio::350::79%",
+            "26::Isuzu::Osaka::340::79%",
+            "27::Scion::Hong Kong::330::79%",
+            "28::Rolls Royce::Istanbul::320::7%",
+            "29::Ferrari::Torino::310::7%",
+            "30::Pontiac::Detroit::300::7%"
+        ]
+        function searchf(){
+            var usersearach=document.forms['searchform']['searchvalue'].value;
+            var result='';
+            for(i=0;i<data.length;i++){
+                // console.log(data[i][1]);
+                var datasp=data[i].split('::');
+                // console.log(datasp[4])
+                if(usersearach==datasp[1] || usersearach==datasp[0] || usersearach==datasp[2] || usersearach==datasp[3] || usersearach==datasp[4]){
+                    // document.getElementById('result').innerHTML=data[i];
+                    result+=data[i]+'<br/>'
+                }
+            }
+            document.getElementById('result').innerHTML=result;
+            return false;
+        }
+    </script>
+</body>
+</html>
